@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alagoas</title>
+  <style>
+    /* Reset simples */
+    * { box-sizing: border-box; margin: 7; padding: 0; }
+
+    /* Cores inspiradas na bandeira de Alagoas */
+    :root{
+      --vermelho:#d32f2f;
+      --azul:#004aad;
+      --branco:#ffffff;
+      --cinza-claro:#f4f6f8;
+      --texto:#1b1b1b;
+    }
+
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--texto);
+      background: linear-gradient(180deg,var(--cinza-claro) 0%, #ffffff 60%);
+      min-height:100vh;
+      padding: 2.5rem;
+      padding-left:5rem; /* espaço para a bandeira fixa no canto */
+    }
+
+    /* Bandeira no canto superior esquerdo (fixa) */
+    .flag {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      width: 96px;
+      height: 64px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--branco);
+      z-index: 50;
+    }
+
+    /* Header centralizado */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:1rem;
+      margin-bottom:2rem;
+      text-align:center;
+    }
+
+    .brand {
+      display:flex;
+      flex-direction:column;
+      gap:0.25rem;
+    }
+
+    h1{
+      font-size:2rem;
+      color:var(--azul);
+      letter-spacing: -0.5px;
+    }
+
+    p.lead{
+      color: #444;
+      font-size:0.98rem;
+      max-width: 70ch;
+    }
+
+    main{
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.98));
+      border-radius: 12px;
+      padding: 1.25rem;
+      box-shadow: 0 6px 18px rgba(20,30,50,0.06);
+      border-left: 6px solid var(--vermelho);
+      transition: transform .22s ease, box-shadow .22s ease;
+      display:flex;
+      flex-direction:column;
+      gap:0.75rem;
+    }
+
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(20,30,50,0.12);
+    }
+
+    .city-title{
+      display:flex;
+      align-items:center;
+      gap:0.6rem;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:38px;
+      height:38px;
+      border-radius:8px;
+      background: linear-gradient(135deg,var(--vermelho),var(--azul));
+      color:var(--branco);
+      font-weight:700;
+      font-size:0.95rem;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    }
+
+    h2{
+      font-size:1.15rem;
+      color: #0f2746;
+    }
+
+    .desc{
+      color:#333;
+      line-height:1.5;
+      font-size:0.95rem;
+      flex:1;
+    }
+
+    .actions{
+      margin-top:auto;
+      display:flex;
+      gap:0.5rem;
+    }
+
+    .btn{
+      padding:0.5rem 0.9rem;
+      border-radius:8px;
+      border: none;
+      cursor:pointer;
+      font-weight:600;
+      background:var(--azul);
+      color:var(--branco);
+      transition:opacity .16s ease, transform .12s ease;
+    }
+
+    .btn:active{ transform: translateY(1px); }
+
+    footer{
+      margin-top:2rem;
+      color:#6b6b6b;
+      font-size:0.9rem;
+      text-align:center;
+    }
+
+    /* Responsividade */
+    @media (max-width:520px){
+      body{ padding-left: 1rem; }
+      .flag { width:72px; height:48px; left:0.6rem; top:0.6rem; }
+      h1{ font-size:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Bandeira de Alagoas (SVG): canto superior esquerdo -->
+  <div class="flag" aria-hidden="true">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Bandeira_de_Alagoas.svg"  alt="Bandeira de Alagoas" width="100%" height="auto">
+  </div>
+
+  <header>
+    <div class="brand">
+      <h1>Alagoas — Bem-vindo(a)</h1>
+      <p class="lead">Conheça o paraíso das águas cristalinas e da cultura vibrante. Três destinos imperdíveis que mostram o melhor de Alagoas.</p>
+    </div>
+  </header>
+
+  <main>
+    <article class="card" aria-labelledby="maceio">
+      <div class="city-title">
+        <div class="badge">M</div>
+        <h2 id="maceio">Maceió</h2>
+      </div>
+      <p class="desc">
+        A capital alagoana encanta com suas praias de águas azul-turquesa, como Pajuçara, Ponta Verde e Jatiúca. Passeios de jangada levam às piscinas naturais e o calçadão é perfeito para um fim de tarde. A culinária é outro destaque — prove o sururu e o peixe frito à moda da casa.
+      </p>
+      <div class="actions">
+        <button class="btn" onclick="alert('Dica: faça o passeio às piscinas naturais da Pajuçara e aproveite para tirar fotos incríveis!')">Dica rápida</button>
+      </div>
+    </article>
+
+    <article class="card" aria-labelledby="maragogi">
+      <div class="city-title">
+        <div class="badge">M</div>
+        <h2 id="maragogi">Maragogi</h2>
+      </div>
+      <p class="desc">
+        Conhecida como o “Caribe Brasileiro”, Maragogi tem águas cristalinas e piscinas naturais (as famosas Galés). É o destino ideal para mergulhar e relaxar nas praias de areia branca. O passeio de catamarã é imperdível e revela a beleza do litoral alagoano.
+      </p>
+      <div class="actions">
+        <button class="btn" onclick="alert('Dica: vá cedo para pegar a maré baixa e aproveitar as Galés no auge da transparência!')">Dica rápida</button>
+      </div>
+    </article>
+
+    <article class="card" aria-labelledby="penedo">
+      <div class="city-title">
+        <div class="badge">P</div>
+        <h2 id="penedo">Penedo</h2>
+      </div>
+      <p class="desc">
+        Penedo é uma das cidades mais antigas do Nordeste, às margens do Rio São Francisco. Suas igrejas, casarões coloniais e ruas de pedra contam histórias do Brasil colonial. É um destino encantador para quem aprecia cultura, fé e arquitetura histórica.
+      </p>
+      <div class="actions">
+        <button class="btn" onclick="alert('Dica: visite o centro histórico e prove os doces conventuais feitos por antigas tradições locais!')">Dica rápida</button>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>Visite Alagoas com respeito à natureza e à cultura local — cada canto deste estado é um pedacinho do paraíso brasileiro.</p>
+  </footer>
+
+  <nav style="text-align:center; margin-top:1rem;">
+    <a href="index.html" style="background-color:#004aad; color:white; padding:10px 20px; border-radius:6px; text-decoration:none; font-weight:bold;">Menu</a>
+  </nav>
+
+  <script>
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Tab') document.body.classList.add('show-focus');
+    });
+  </script>
+</body>
+</html>
